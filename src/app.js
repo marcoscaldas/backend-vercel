@@ -3,12 +3,14 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+app.use(cors('http://localhost:5173'));
 app.use(express.json());
+
 
 app.get("/", (req, res) => {
   res.json({ mensagem: "API Desvendando o Código!" });
 });
+
 
 app.get("/api/produtos", (req, res) => {
   res.json([
